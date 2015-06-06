@@ -1,0 +1,23 @@
+function _gzp-action-open()
+{
+  case "$OSTYPE" in
+    darwin*)
+      eval open "$*"
+      ;;
+    linux*)
+      eval xdg-open "$*"
+      ;;
+  esac
+}
+
+local selected_items="$(cat)"
+if [[ -z "$selected_items" ]]; then
+  return 1
+fi
+
+_gzp-action-open "$@" "${(f)selected_items}"
+
+# Local Variables:
+# mode: Shell-Script
+# End:
+# vim: ft=zsh

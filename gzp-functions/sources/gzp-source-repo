@@ -1,0 +1,12 @@
+local gh_token="$(cat ${HOME}/.gzp.json | jq --raw-output '.token')"
+
+curl \
+  --silent \
+  --header "Authorization: token $gh_token" \
+  "https://api.github.com/user/repos" \
+  | jq --raw-output '.[] | .html_url'
+
+# Local Variables:
+# mode: Shell-Script
+# End:
+# vim: ft=zsh
