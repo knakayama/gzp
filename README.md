@@ -7,7 +7,7 @@ gzp
 
 **Note:** This code is heavily inspired by [anyframe](https://github.com/mollifier/anyframe).
 
-List your repositories and browse it with [peco style](https://github.com/peco/peco).
+List your repositories or starred repositories, then browse it with [peco style](https://github.com/peco/peco).
 
 # Requirements
 
@@ -33,10 +33,11 @@ $ gzp-action-setup
 Next, edit your `~/.zshrc` like the following:
 
 ```zsh
-bindkey '^x^g' gzp-widget-open-gh-repo
+bindkey '^x^g' gzp-widget-open-repo
+bindkey '^x^w' gzp-widget-open-starred
 ```
 
-Finally, hit `^x^g` in your terminal.
+Finally, hit `^x^g` or `^x^w` in your terminal.
 
 # License
 

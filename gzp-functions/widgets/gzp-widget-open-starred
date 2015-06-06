@@ -1,0 +1,23 @@
+if [[ ! -f "${HOME}/.gzp.json" ]]; then
+  cat <<'EOT' >&2
+
+It looks like your credential file does not exist.
+Please setup with gzp-action-setup.
+EOT
+  return 1
+else
+  cat <<'EOT'
+
+Getting your starred repository lists...
+EOT
+fi
+
+gzp-source-starred \
+  | gzp-selector-peco "$LBUFFER" \
+  | gzp-action-open
+
+# Local Variables:
+# mode: Shell-Script
+# End:
+# vim: ft=zsh
+

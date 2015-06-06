@@ -1,0 +1,25 @@
+local gh_token="$(cat ${HOME}/.gzp.json | jq --raw-output '.token')"
+local page=1
+
+while true; do
+  typeset -a starred_ary
+  local starred="$(curl \
+    --silent \
+    --header "Authorization: token $gh_token" \
+    "https://api.github.com/user/starred?page=${page}&per_page=100" \
+    | jq --raw-output '.[] | .html_url')"
+
+  if [[ -n "$starred" ]]; then
+    starred_ary=($starred_ary $starred)
+    page=$(( page + 1 ))
+  else
+    echo $starred_ary
+    break
+  fi
+
+done
+
+# Local Variables:
+# mode: Shell-Script
+# End:
+# vim: ft=zsh
