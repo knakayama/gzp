@@ -8,7 +8,7 @@ EOT
 else
   cat <<'EOT'
 
-Getting your repository list...
+Getting your repository lists...
 EOT
 fi
 
