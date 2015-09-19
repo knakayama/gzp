@@ -39,6 +39,10 @@ bindkey '^x^w' gzp-widget-open-starred
 
 Finally, hit `^x^g` or `^x^w` in your terminal.
 
+# Other useful tool
+
+Are you tmux user? Please check [tmux version](https://github.com/knakayama/tmux-gzp)!
+
 # License
 
 [MIT](https://github.com/knakayama/gzp/blob/master/LICENSE)
